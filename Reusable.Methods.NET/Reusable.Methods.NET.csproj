@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,7 +8,24 @@
     <Authors>Nicober Mani</Authors>
     <AnalysisLevel>latest</AnalysisLevel>
     <Description>Collection of Many Useful Reusable Methods for .NET Engineers</Description>
-    <PackageTags>nicober;</PackageTags>
+    <PackageTags>nicober;reusable;extension;extensions;helper;.net;core</PackageTags>
+    <RepositoryUrl>https://github.com/nicober1/Reusable.Methods.NET</RepositoryUrl>
+	 
+    <RepositoryType>git</RepositoryType>
+	  <PackageVersion>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HHmm"))</PackageVersion>
+	  <IncludeSymbols>true</IncludeSymbols>
+	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Core" Version="1.24.0" />
+    <PackageReference Include="Azure.Data.Tables" Version="12.6.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.12.0" />
+    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.10.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="108.0.1" />
+    <PackageReference Include="RestSharp.Newtonsoft.Json" Version="1.5.1" />
+  </ItemGroup>
 
 </Project>
