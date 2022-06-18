@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reusable.Methods.NET", "Reusable.Methods.NET\Reusable.Methods.NET.csproj", "{D9789E8E-7ED2-40FD-9090-3BB6EB58BE5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reusable.Methods.NET.Tests", "..\Reusable.Methods.NET.Tests\Reusable.Methods.NET.Tests.csproj", "{D4DFE375-5E41-45AE-8F51-52BCA5141B1F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reusable.Methods.NET.Tests", "Reusable.Methods.NET.Tests\Reusable.Methods.NET.Tests.csproj", "{D4DFE375-5E41-45AE-8F51-52BCA5141B1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
