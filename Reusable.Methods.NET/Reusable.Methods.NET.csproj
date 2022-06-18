@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Nicober Mani</Authors>
     <AnalysisLevel>latest</AnalysisLevel>
-    <Description>Collection of Many Useful Reusable Mehods for .NET Engineers</Description>
+    <Description>Collection of Many Useful Reusable Methods for .NET Engineers</Description>
     <PackageTags>nicober;</PackageTags>
   </PropertyGroup>
 
