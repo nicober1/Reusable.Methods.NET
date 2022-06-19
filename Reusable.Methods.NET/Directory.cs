@@ -1,8 +1,6 @@
-﻿using System.Runtime.InteropServices;
-
-namespace Reusable.Methods.NET
+﻿namespace Reusable.Methods.NET
 {
-    public static partial class Extensions
+    public static partial class Reuse
     {
 
         public static string GetRuntimeEnvironmentGetRuntimeDirectory()
