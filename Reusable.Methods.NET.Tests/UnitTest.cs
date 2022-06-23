@@ -1,9 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using NUnit.Framework;
-
 namespace Reusable.Methods.NET.Tests
 {
     public class Tests
@@ -48,6 +42,12 @@ namespace Reusable.Methods.NET.Tests
                     Console.WriteLine("Not Visual Studio IDE");
                     break;
             }
+        }
+
+        [Test]
+        public void PowerShellCommandTest()
+        {
+            var obj = Reuse.RunPowerShellCommand("$PSVersionTable");
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace Reusable.Methods.NET
+﻿using System.Management.Automation;
+using System.Management.Automation.Runspaces;
+
+namespace Reusable.Methods.NET
 {
     public static partial class Reuse
     {
@@ -8,5 +11,9 @@
             return RuntimeEnvironment.GetRuntimeDirectory();
         }
 
+        
+
     }
+
+    
 }

@@ -12,7 +12,7 @@ namespace Reusable.Methods.NET
         public static bool IfVisualStudioIde()
         {
             var dict = Environment.GetEnvironmentVariables();
-            return !string.IsNullOrEmpty((string?)dict["VisualStudioEdition"]);
+            return dict.Contains("VisualStudioEdition");
         }
 
     }

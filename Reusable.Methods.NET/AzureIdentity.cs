@@ -7,7 +7,7 @@
 
         public static async Task<string> GetAzureSqlDbAccessToken()
         {
-            var tokenRequestContext = new TokenRequestContext(new[] { "https://database.windows.net//.default" });
+            var tokenRequestContext = new TokenRequestContext(new[] { "https://database.windows.net/" });
             var tokenRequestResult = await new DefaultAzureCredential().GetTokenAsync(tokenRequestContext);
             return tokenRequestResult.Token;
         }
