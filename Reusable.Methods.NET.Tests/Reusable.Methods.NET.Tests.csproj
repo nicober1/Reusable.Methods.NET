@@ -18,4 +18,10 @@
     <ProjectReference Include="..\Reusable.Methods.NET\Reusable.Methods.NET.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Config\Config1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

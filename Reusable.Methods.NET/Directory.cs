@@ -1,5 +1,4 @@
-﻿using System.Management.Automation;
-using System.Management.Automation.Runspaces;
+﻿using System.Reflection;
 
 namespace Reusable.Methods.NET
 {
@@ -11,7 +10,15 @@ namespace Reusable.Methods.NET
             return RuntimeEnvironment.GetRuntimeDirectory();
         }
 
-        
+        public static string? GetEntryAssemblyLocationPath()
+        {
+            return Assembly.GetEntryAssembly()?.Location;
+        }
+
+        public static string? GetExecutingAssemblyLocationPath()
+        {
+            return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        }
 
     }
 

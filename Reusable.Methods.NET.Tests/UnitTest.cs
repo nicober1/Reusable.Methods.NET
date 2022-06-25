@@ -1,3 +1,5 @@
+using AutoMapper.Configuration.Annotations;
+
 namespace Reusable.Methods.NET.Tests
 {
     public class Tests
@@ -48,6 +50,22 @@ namespace Reusable.Methods.NET.Tests
         public void PowerShellCommandTest()
         {
             var obj = Reuse.RunPowerShellCommand("$PSVersionTable");
+        }
+
+        [Test]
+        public void GetConfigAsKeyValuePairsAndSetAsEnvironmentVariablesTest()
+        {
+            Assert.AreEqual(Reuse.GetConfigAsKeyValuePairsAndSetAsEnvironmentVariables().First(x => x.Key.Contains("Config")).Value,"abracadabra");
+        }
+
+
+
+        [Test]
+        public void GetValueForGivenKeyFromKeyValuePairListInputTest()
+        {
+            var value = Reuse.GetConfigAsKeyValuePairsAndSetAsEnvironmentVariables()
+                .GetValueForGivenKeyFromKeyValuePairListInput("Config");
+            Assert.AreEqual(value, "abracadabra");
         }
     }
 }
