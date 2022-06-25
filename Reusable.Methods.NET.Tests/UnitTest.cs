@@ -53,6 +53,12 @@ namespace Reusable.Methods.NET.Tests
         }
 
         [Test]
+        public void RunPowerShellCommandFromInputFileTest()
+        {
+            var obj = Reuse.RunPowerShellCommandFromInputFile(Reuse.GetExecutingAssemblyLocationPath()+"/Config/Automation.ps1");
+        }
+
+        [Test]
         public void GetConfigAsKeyValuePairsAndSetAsEnvironmentVariablesTest()
         {
             Assert.AreEqual(Reuse.GetConfigAsKeyValuePairsAndSetAsEnvironmentVariables().First(x => x.Key.Contains("Config")).Value,"abracadabra");

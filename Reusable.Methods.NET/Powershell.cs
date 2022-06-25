@@ -10,7 +10,7 @@
         /// <param name="scriptFullPath">The full file path for the .ps1 file.</param>
         /// <param name="parameters">The parameters for the script, can be null.</param>
         /// <returns>The output from the PowerShell execution.</returns>
-        public static ICollection<PSObject> RunPowerShellScript(string scriptFullPath, ICollection<CommandParameter>? parameters = null)
+        public static IEnumerable<PSObject> RunPowerShellScript(string scriptFullPath, ICollection<CommandParameter>? parameters = null)
         {
             var runSpace = RunspaceFactory.CreateRunspace();
             runSpace.Open();
@@ -24,6 +24,20 @@
                 }
             }
             pipeline.Commands.Add(cmd);
+            var results = pipeline.Invoke();
+            pipeline.Dispose();
+            runSpace.Dispose();
+            return results;
+        }
+
+        public static IEnumerable<PSObject> RunPowerShellCommandFromInputFile(string scriptFullPath, ICollection<CommandParameter>? parameters = null)
+        {
+            var content = File.ReadAllText(scriptFullPath);
+            var runSpace = RunspaceFactory.CreateRunspace();
+            runSpace.Open();
+            var pipeline = runSpace.CreatePipeline();
+            
+            pipeline.Commands.AddScript(content);
             var results = pipeline.Invoke();
             pipeline.Dispose();
             runSpace.Dispose();
