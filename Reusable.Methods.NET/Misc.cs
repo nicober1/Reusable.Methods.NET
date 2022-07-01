@@ -21,7 +21,7 @@ namespace Reusable.Methods.NET
                 {
                     sw.Write(array[i] + ";");
                 }
-                sw.Write(array[i].ToString());
+                sw.Write(array[i]?.ToString());
                 sw.WriteLine();
             }
             sw.Close();
@@ -31,6 +31,11 @@ namespace Reusable.Methods.NET
         {
             var p = new ChoCSVReader(path).WithFirstLineHeader();
             return p.AsDataTable();
+        }
+
+        public static string DictionaryToPairString<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, string pairSeparator, string keyValueSeparator = "=")
+        {
+            return string.Join(Environment.NewLine, dictionary.Select(pair => pair.Key + keyValueSeparator + pair.Value));
         }
     }
 }
