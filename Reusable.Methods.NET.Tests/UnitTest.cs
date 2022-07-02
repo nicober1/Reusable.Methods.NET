@@ -1,5 +1,3 @@
-using AutoMapper.Configuration.Annotations;
-
 namespace Reusable.Methods.NET.Tests
 {
     public class Tests
