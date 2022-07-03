@@ -4,7 +4,6 @@ namespace Reusable.Methods.NET
 {
     public static partial class Reuse
     {
-        public static bool IsRunningMocked { get; set; }
         public static Action<string> LoggerMethod { get; set; }
 
         public static string ProjectPath { get; set; }
@@ -15,12 +14,12 @@ namespace Reusable.Methods.NET
             ProjectPath = ".";
         }
 
-        public static void Log(string message)
+        public static void LogToConsole(this string message)
         {
             LoggerMethod.Invoke(message);
         }
 
-        public static void Log(object obj)
+        public static void LogToConsole(this object obj)
         {
             if (obj != null)
             {
@@ -34,7 +33,7 @@ namespace Reusable.Methods.NET
 
         public static void Log()
         {
-            Reuse.Log("");
+            Reuse.LogToConsole("");
         }
 
        
