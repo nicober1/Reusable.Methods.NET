@@ -33,7 +33,7 @@ namespace Reusable.Methods.NET
 
         public static void Log()
         {
-            Reuse.LogToConsole("");
+            "".LogToConsole();
         }
 
        

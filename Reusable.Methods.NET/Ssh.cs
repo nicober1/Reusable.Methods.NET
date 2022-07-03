@@ -1,20 +1,17 @@
-﻿using Microsoft.Azure.Management.ResourceManager.Fluent;
-using Renci.SshNet;
-
-namespace Reusable.Methods.NET
+﻿namespace Reusable.Methods.NET
 {
     public static partial class Reuse
     {
        
-       private static string TrySsh(
+       public static string? TrySsh(
             string host,
             int port,
             string userName,
             string password,
             string commandToExecute)
         {
-            string commandOutput = null;
-            var backoffTime = 30 * 1000;
+            string? commandOutput = null;
+            const int backOffTime = 30 * 1000;
             var retryCount = 3;
 
             while (retryCount > 0)
@@ -26,19 +23,17 @@ namespace Reusable.Methods.NET
                         sshClient.Connect();
                         if (commandToExecute != null)
                         {
-                            using (var command = sshClient.CreateCommand(commandToExecute))
-                            {
-                                commandOutput = command.Execute();
-                            }
+                            using var command = sshClient.CreateCommand(commandToExecute);
+                            commandOutput = command.Execute();
                         }
                         break;
                     }
-                    catch (Exception exception)
+                    catch (Exception)
                     {
                         retryCount--;
                         if (retryCount == 0)
                         {
-                            throw exception;
+                            throw;
                         }
                     }
                     finally
@@ -47,10 +42,13 @@ namespace Reusable.Methods.NET
                         {
                             sshClient.Disconnect();
                         }
-                        catch { }
+                        catch
+                        {
+                            // ignored
+                        }
                     }
                 }
-                SdkContext.DelayProvider.Delay(backoffTime);
+                SdkContext.DelayProvider.Delay(backOffTime);
             }
 
             return commandOutput;
