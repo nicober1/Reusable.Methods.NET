@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using System.Text.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Reusable.Methods.NET
 {
@@ -14,6 +16,14 @@ namespace Reusable.Methods.NET
         {
 
             return JsonConvert.DeserializeObject<List<T>>(json);
+        }
+
+        
+        public static string ToJson<T>(this T t)
+        {
+            var value = JsonSerializer.Serialize(t);
+
+            return value;
         }
 
     }
