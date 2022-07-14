@@ -1,10 +1,4 @@
-﻿using System.Xml;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using Formatting = Newtonsoft.Json.Formatting;
-
-namespace Reusable.Methods.NET
+﻿namespace Reusable.Methods.NET
 {
     public static partial class Reuse
     {

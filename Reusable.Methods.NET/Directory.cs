@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace Reusable.Methods.NET
+﻿namespace Reusable.Methods.NET
 {
     public static partial class Reuse
     {

@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Text.Json;
+﻿using System.Text.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Reusable.Methods.NET
