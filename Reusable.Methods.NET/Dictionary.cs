@@ -1,7 +1,5 @@
-﻿using ChoETL;
+﻿namespace Reusable.Methods.NET;
 
-namespace Reusable.Methods.NET
-{
     public static partial class Reuse
     {
        
@@ -11,4 +9,3 @@ namespace Reusable.Methods.NET
             return string.Join(Environment.NewLine, dictionary.Select(pair => pair.Key + keyValueSeparator + pair.Value));
         }
     }
-}
